@@ -58,7 +58,7 @@ label {
 
 .name {
     display: grid;
-    grid-template: 1fr 1fr/1fr 1fr 1fr 1fr;
+    grid-template: 1fr 1fr/1fr 1fr 1fr;
 }
 
 #myname {
@@ -66,13 +66,21 @@ label {
     grid-row-start: 1;
     grid-column-end: 3;
     grid-column-start: 1;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+#myname h1 {
+    margin: 100px;
 }
 
 #myavatar {
-    animation: fadetext 1s ease-in 1s;
+    animation: fadetext 1s ease-in 1.3s;
     grid-row-start: 2;
     grid-column-start: 2;
     grid-column-end: 5;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
 
 .hobbies {
@@ -81,11 +89,15 @@ label {
 }
 
 #gamedev {
-    animation: fadetext 1s ease-in 2s;
+    animation: fadetext 1s ease-in 2.6s;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
 
 #webdev {
-    animation: fadetext 1s ease-in 3s;
+    animation: fadetext 1s ease-in 3.9s;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
 
 @keyframes fadetext {
@@ -247,6 +259,30 @@ h4 {
     }
     .project {
         margin: 20px 10px;
+    }
+    /* Intro */
+    .name {
+        display: grid;
+        grid-template: 1fr 1fr/1fr 1fr 1fr;
+    }
+    #myname {
+        animation: fadetext 1s ease-in-out;
+        grid-row-start: 1;
+        grid-column-end: 3;
+        grid-column-start: 1;
+        opacity: 0;
+        animation-fill-mode: forwards;
+    }
+    #myname h1 {
+        margin-left: 10px;
+        margin-top: 30px;
+    }
+    .hobbies {
+        display: grid;
+        grid-template: 1fr /1fr;
+    }
+    #webdev {
+        padding: 50px;
     }
     /*connect */
     .contact-main {
