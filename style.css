@@ -1,0 +1,280 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.highlight {
+    color: white;
+}
+
+
+/* Navigation */
+
+.nav {
+    border-bottom: 1px solid #EAEAEB;
+    text-align: center;
+    height: 8vh;
+    line-height: 8vh;
+    background-color: #252a34;
+}
+
+.menu a {
+    color: gray;
+    margin: 0 10px;
+    line-height: 8vh;
+}
+
+label {
+    font-size: 26px;
+    line-height: 8vh;
+    display: none;
+}
+
+#toggle {
+    display: none;
+}
+
+
+/* Intro */
+
+.intro {
+    min-height: 100vh;
+    background-color: #e5e4cc;
+}
+
+.name {
+    display: grid;
+    grid-template: 1fr 1fr/1fr 1fr 1fr 1fr;
+}
+
+#myname {
+    animation: fadetext 1s ease-in-out;
+    grid-row-start: 1;
+    grid-column-end: 3;
+    grid-column-start: 1;
+}
+
+#myavatar {
+    animation: fadetext 1s ease-in 1s;
+    grid-row-start: 2;
+    grid-column-start: 2;
+    grid-column-end: 5;
+}
+
+.hobbies {
+    display: grid;
+    grid-template: 1fr/1fr 1fr;
+}
+
+#gamedev {
+    animation: fadetext 1s ease-in 2s;
+}
+
+#webdev {
+    animation: fadetext 1s ease-in 3s;
+}
+
+@keyframes fadetext {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*Projects*/
+
+.projects {
+    min-height: 100vh;
+    background-color: #163a5f;
+}
+
+.projects h1 {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.projects-main {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    background-color: #ffd480;
+    border-radius: 1%;
+}
+
+.project h1,
+h2,
+h3,
+h4 {
+    text-align: center;
+}
+
+.project h2 {
+    color: #2b2e4a;
+}
+
+.project h3,
+h4 {
+    color: #48466d;
+}
+
+.project img {
+    width: 450px;
+    padding: 10px;
+    border-radius: 0%;
+}
+
+.icon img {
+    width: 100px;
+}
+
+
+/* connect */
+
+.contact-main {
+    min-height: 20vh;
+    background-color: #616161;
+    display: grid;
+    grid-template: 1fr/1fr 1fr 1fr 1fr;
+}
+
+.contact h1 {
+    background-color: #616161;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.contact #github {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.contact #email {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+.contact #linkedin {
+    grid-row-start: 1;
+    grid-column-start: 3;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.contact #gamejolt {
+    grid-row-start: 1;
+    grid-column-start: 4;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+
+/*Align the cards at 950px*/
+
+@media only screen and (max-width: 950px) {
+    /*Projects*/
+    .projects-main {
+        display: grid;
+        grid-template: 1fr/ 1fr;
+    }
+    .project {
+        margin: 10px 100px;
+    }
+}
+
+
+/*Change the menu to hamburger*/
+
+@media only screen and (max-width: 600px) {
+    label {
+        display: block;
+        cursor: pointer;
+        width: 26px;
+        padding-left: 50%;
+        align-self: center;
+    }
+    .menu {
+        display: none;
+    }
+    .menu a {
+        clear: right;
+        display: block;
+        border-bottom: 1px solid #EAEAEB;
+    }
+    #toggle:checked+.menu {
+        display: block;
+    }
+    .project {
+        margin: 20px 10px;
+    }
+    /*connect */
+    .contact-main {
+        min-height: 20vh;
+        background-color: #3e206d;
+        display: grid;
+        grid-template: 1fr 1fr/1fr 1fr;
+    }
+    .contact #github {
+        grid-row-start: 1;
+        grid-column-start: 1;
+    }
+    .contact #email {
+        grid-row-start: 1;
+        grid-column-start: 2;
+    }
+    .contact #linkedin {
+        grid-row-start: 2;
+        grid-column-start: 1;
+    }
+    .contact #gamejolt {
+        grid-row-start: 2;
+        grid-column-start: 2;
+        margin: 30px;
+    }
+    .project img {
+        width: 250px;
+        padding: 10px;
+        border-radius: 0%;
+    }
+}
