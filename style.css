@@ -1,316 +1,366 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 html,
 body {
+  width: 100%;
+  height: 100%;
+}
+
+/********************/
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+}
+
+.topnav a {
+  
+  color: #f2f2f2;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover{
+  background-color: #555;
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child),
+  .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {
+    float: none;
+  }
+  .topnav.responsive .dropdown-content {
+    position: relative;
+  }
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
     width: 100%;
-    height: 100%;
+    text-align: left;
+  }
+}
+/********************/
+.landing {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.landing p {
+  font-size: 3rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  overflow: hidden;
+}
+.landing p span.typed-text {
+  font-weight: normal;
+  color: #dd7732;
+}
+.landing p span.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: CursorBlink 1s infinite;
 }
 
-.highlight {
-    color: white;
+@keyframes CursorBlink {
+  0% {
+    background-color: #ccc;
+  }
+  49% {
+    background-color: #ccc;
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #ccc;
+  }
 }
-
-
-/* Navigation */
-
-.nav {
-    border-bottom: 1px solid #EAEAEB;
-    text-align: center;
-    height: 8vh;
-    line-height: 8vh;
-    background-color: #252a34;
-}
-
-.menu a {
-    color: gray;
-    margin: 0 10px;
-    line-height: 8vh;
-}
-
-label {
-    font-size: 26px;
-    line-height: 8vh;
-    display: none;
-}
-
-#toggle {
-    display: none;
-}
-
-
-/* Intro */
-
-.intro {
-    min-height: 100vh;
-    background-color: #d7fbe8;
-}
-
-.name {
-    display: grid;
-    grid-template: 1fr 1fr/1fr 1fr 1fr;
-}
-
-#myname {
-    animation: fadetext 1s ease-in-out;
-    grid-row-start: 1;
-    grid-column-end: 3;
-    grid-column-start: 1;
-    opacity: 0;
-    animation-fill-mode: forwards;
-}
+/***********************/
 
 #myname h1 {
-    margin: 100px;
+  margin: 100px;
 }
 
 #myavatar {
-    animation: fadetext 1s ease-in 1.3s;
-    grid-row-start: 2;
-    grid-column-start: 2;
-    grid-column-end: 5;
-    opacity: 0;
-    animation-fill-mode: forwards;
+  animation: fadetext 1s ease-in 1.3s;
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
 .hobbies {
-    display: grid;
-    grid-template: 1fr/1fr 1fr;
+  display: grid;
+  grid-template: 1fr/1fr 1fr;
 }
 
 #gamedev {
-    animation: fadetext 1s ease-in 2.6s;
-    opacity: 0;
-    animation-fill-mode: forwards;
+  animation: fadetext 1s ease-in 2.6s;
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
 #webdev {
-    animation: fadetext 1s ease-in 3.9s;
-    opacity: 0;
-    animation-fill-mode: forwards;
+  animation: fadetext 1s ease-in 3.9s;
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fadetext {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
 
 /*Projects*/
 
 .projects {
-    min-height: 100vh;
-    background-color: #163a5f;
+  min-height: 100vh;
+  background-color: #163a5f;
 }
 
 .projects h1 {
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 10px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
 }
 
 .projects-main {
-    display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
 }
 
 .project {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-    background-color: #ffd480;
-    border-radius: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  background-color: #ffd480;
+  border-radius: 1%;
 }
 
 .project h1,
 h2,
 h3,
 h4 {
-    text-align: center;
+  text-align: center;
 }
 
 .project h2 {
-    color: #2b2e4a;
+  color: #2b2e4a;
 }
 
 .project h3,
 h4 {
-    color: #48466d;
+  color: #48466d;
 }
 
 .project img {
-    width: 450px;
-    padding: 10px;
-    border-radius: 0%;
+  width: 450px;
+  padding: 10px;
+  border-radius: 0%;
 }
 
 .icon img {
-    width: 100px;
+  width: 100px;
 }
-
 
 /* connect */
 
 .contact-main {
-    min-height: 20vh;
-    background-color: #616161;
-    display: grid;
-    grid-template: 1fr/1fr 1fr 1fr 1fr;
+  min-height: 20vh;
+  background-color: #616161;
+  display: grid;
+  grid-template: 1fr/1fr 1fr 1fr 1fr;
 }
 
 .contact h1 {
-    background-color: #616161;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 10px;
+  background-color: #616161;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
 }
 
 .contact #github {
-    grid-row-start: 1;
-    grid-column-start: 1;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 40px;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 40px;
 }
 
 .contact #email {
-    grid-row-start: 1;
-    grid-column-start: 2;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 60px;
+  grid-row-start: 1;
+  grid-column-start: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 60px;
 }
 
 .contact #linkedin {
-    grid-row-start: 1;
-    grid-column-start: 3;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 40px;
+  grid-row-start: 1;
+  grid-column-start: 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 40px;
 }
 
 .contact #gamejolt {
-    grid-row-start: 1;
-    grid-column-start: 4;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 40px;
+  grid-row-start: 1;
+  grid-column-start: 4;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 40px;
 }
-
 
 /*Align the cards at 950px*/
 
 @media only screen and (max-width: 950px) {
-    /*Projects*/
-    .projects-main {
-        display: grid;
-        grid-template: 1fr/ 1fr;
-    }
-    .project {
-        margin: 10px 100px;
-    }
+  /*Projects*/
+  .projects-main {
+    display: grid;
+    grid-template: 1fr/ 1fr;
+  }
+  .project {
+    margin: 10px 100px;
+  }
 }
-
 
 /*Change the menu to hamburger*/
 
 @media only screen and (max-width: 600px) {
-    label {
-        display: block;
-        cursor: pointer;
-        width: 26px;
-        padding-left: 50%;
-        align-self: center;
-    }
-    .menu {
-        display: none;
-    }
-    .menu a {
-        clear: right;
-        display: block;
-        border-bottom: 1px solid #EAEAEB;
-    }
-    #toggle:checked+.menu {
-        display: block;
-    }
-    .project {
-        margin: 20px 10px;
-    }
-    /* Intro */
-    .name {
-        display: grid;
-        grid-template: 1fr 1fr/1fr 1fr 1fr;
-    }
-    #myname {
-        animation: fadetext 1s ease-in-out;
-        grid-row-start: 1;
-        grid-column-end: 3;
-        grid-column-start: 1;
-        opacity: 0;
-        animation-fill-mode: forwards;
-    }
-    #myname h1 {
-        margin-left: 10px;
-        margin-top: 30px;
-    }
-    .hobbies {
-        display: grid;
-        grid-template: 1fr /1fr;
-    }
-    #webdev {
-        padding: 50px;
-    }
-    /*connect */
-    .contact-main {
-        min-height: 20vh;
-        background-color: #3e206d;
-        display: grid;
-        grid-template: 1fr 1fr/1fr 1fr;
-    }
-    .contact #github {
-        grid-row-start: 1;
-        grid-column-start: 1;
-    }
-    .contact #email {
-        grid-row-start: 1;
-        grid-column-start: 2;
-    }
-    .contact #linkedin {
-        grid-row-start: 2;
-        grid-column-start: 1;
-    }
-    .contact #gamejolt {
-        grid-row-start: 2;
-        grid-column-start: 2;
-        margin: 30px;
-    }
-    .project img {
-        width: 250px;
-        padding: 10px;
-        border-radius: 0%;
-    }
+  label {
+    display: block;
+    cursor: pointer;
+    width: 26px;
+    padding-left: 50%;
+    align-self: center;
+  }
+  .menu {
+    display: none;
+  }
+  .menu a {
+    clear: right;
+    display: block;
+    border-bottom: 1px solid #eaeaeb;
+  }
+  #toggle:checked + .menu {
+    display: block;
+  }
+  .project {
+    margin: 20px 10px;
+  }
+  /* Intro */
+  .name {
+    display: grid;
+    grid-template: 1fr 1fr/1fr 1fr 1fr;
+  }
+  #myname {
+    animation: fadetext 1s ease-in-out;
+    grid-row-start: 1;
+    grid-column-end: 3;
+    grid-column-start: 1;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+  #myname h1 {
+    margin-left: 10px;
+    margin-top: 30px;
+  }
+  .hobbies {
+    display: grid;
+    grid-template: 1fr /1fr;
+  }
+  #webdev {
+    padding: 50px;
+  }
+  /*connect */
+  .contact-main {
+    min-height: 20vh;
+    background-color: #3e206d;
+    display: grid;
+    grid-template: 1fr 1fr/1fr 1fr;
+  }
+  .contact #github {
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
+  .contact #email {
+    grid-row-start: 1;
+    grid-column-start: 2;
+  }
+  .contact #linkedin {
+    grid-row-start: 2;
+    grid-column-start: 1;
+  }
+  .contact #gamejolt {
+    grid-row-start: 2;
+    grid-column-start: 2;
+    margin: 30px;
+  }
+  .project img {
+    width: 250px;
+    padding: 10px;
+    border-radius: 0%;
+  }
 }
